@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-manrope), "Manrope", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --color-savour-cream: #F7F3EA;
+  --color-savour-white: #FFFFFF;
+  --color-savour-olive: #263426;
+  --color-savour-forest: #344A35;
+  --color-savour-gold: #B58A45;
+  --color-savour-gold-light: #D4A86A;
+  --color-savour-terracotta: #A96348;
+  --color-savour-charcoal: #1E211D;
+  --color-savour-beige: #E8DFD0;
+  --color-savour-beige-light: #F2ECE1;
+}
+
+:root {
+  --bg-cream: #F7F3EA;
+  --text-charcoal: #1E211D;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #F7F3EA;
+  color: #1E211D;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-manrope), system-ui, -apple-system, sans-serif;
+  background-color: #F7F3EA;
+  color: #1E211D;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom luxury scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F3EA;
+}
+::-webkit-scrollbar-thumb {
+  background: #B58A45;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8e682e;
+}
+
+/* Subtle noise texture or gold line accents */
+.gold-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(181, 138, 69, 0.4) 30%, rgba(181, 138, 69, 0.8) 50%, rgba(181, 138, 69, 0.4) 70%, transparent);
+}
+
+.olive-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(38, 52, 38, 0.15) 50%, transparent);
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee-reverse {
+  display: flex;
+  width: max-content;
+  animation: marquee-reverse 38s linear infinite;
+}
+
+.animate-marquee:hover, .animate-marquee-reverse:hover {
+  animation-play-state: paused;
+}
+
